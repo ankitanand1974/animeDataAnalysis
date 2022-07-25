@@ -21,19 +21,20 @@ while True:
   
     if users_choice == 1:  
           dataset['type'].value_counts().plot(kind='bar' , figsize=(12,12))
+          plt.show()
         
   
     elif users_choice == 2:  
-        dataset['episodes'].value_counts().plot(kind='bar' , figsize=(12,12))
-       
+        dataset['episodes'].value_counts().plot(kind='hist' , figsize=(12,12))
+        plt.show()
 
     elif users_choice == 3:  
-        dataset['rating'].value_counts().plot(kind='bar' , figsize=(12,12))
-
+        dataset['rating'].value_counts().plot(kind='scatter' , figsize=(12,12))
+        plt.show()
   
     elif users_choice == 4:  
-        dataset['members'].value_counts().plot(kind='bar' , figsize=(12,12))
-
+        dataset['members'].value_counts().plot(kind='hist' , figsize=(12,12))
+        plt.show()
 
     elif users_choice == 5:  
         genreList=[]
@@ -42,8 +43,9 @@ while True:
             temp = [key,value]
             genreList.append(temp)
 
-        genre_df=pd.DataFrame(genreList, columns = ["Genre", "Count"]) 
-        genre_df.sort_values("Count").tail(5)
+        genre_df=pd.DataFrame(genreList, columns = ["rating", "genre"]) 
+        genre_df.sort_values("rating").tail(5)
+        plt.show()
     
     elif users_choice == 6:
         break
