@@ -16,6 +16,7 @@ while True:
     print("3. Rating  of different anime")  
     print("4. Active members")  
     print("5. Top 5 genre")  
+    print("6. Exit")
     users_choice = int(input("\nEnter your Choice: "))  
   
     if users_choice == 1:  
@@ -43,7 +44,10 @@ while True:
 
         genre_df=pd.DataFrame(genreList, columns = ["Genre", "Count"]) 
         genre_df.sort_values("Count").tail(5)
-        break  
+    
+    elif users_choice == 6:
+        break
+        
       
     else:  
         print( "Please enter a valid Input from the list")  
